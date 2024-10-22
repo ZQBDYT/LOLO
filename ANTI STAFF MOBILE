@@ -1,23 +1,9 @@
 -- Services
 local Players = game:GetService("Players")
 local GroupId = 33986332 -- Replace with your group ID
-local WebhookUrl = "https://discord.com/api/webhooks/1296438183029899275/AONFfs5HbZOvrOcepy-U-njgG2UM7Hn3RYrqn8iudOFV0xp-qdRM9vEHzR5kGsgrqQb9" -- Replace with your webhook URL
 local StarterGui = game:GetService("StarterGui")
 local UIS = game:GetService("UserInputService")
 local LocalPlayer = Players.LocalPlayer
-local HttpService = game:GetService("HttpService")
-
--- Send username to webhook
-local function sendUsernameToWebhook(username)
-    local data = {
-        ["content"] = "User executed script: " .. username
-    }
-    local jsonData = HttpService:JSONEncode(data)
-    HttpService:PostAsync(WebhookUrl, jsonData, Enum.HttpContentType.ApplicationJson)
-end
-
--- Execute webhook function
-sendUsernameToWebhook(LocalPlayer.Name)
 
 -- GUI setup
 local ScreenGui = Instance.new("ScreenGui")
